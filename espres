@@ -1,0 +1,50 @@
+#!/bin/bash
+
+#You will need to change the filepaths!
+#This is the watched file where output from whisper realtime is written
+while inotifywait -rq -qq -e modify "/home/john/coqui/rtwhisp/whisper_real_time/testing.txt"
+
+#After a write to the watched file, the last 15 lines are written to receiving.txt
+do echo "$(tail -n 15 /home/john/coqui/rtwhisp/whisper_real_time/testing.txt)" >> /home/john/coqui/rtwhisp/whisper_real_time/receiving.txt
+
+#This Line selects the language conversion and writes it to receivingtrans
+echo "argos-translate --from-lang pt --to-lang en \"" > /home/john/coqui/rtwhisp/whisper_real_time/receivingtrans.txt
+
+#This Line simply selects an opposite language conversion
+#echo "argos-translate --from-lang en --to-lang pt \"" > /home/john/coqui/rtwhisp/whisper_real_time/receivingtrans.txt
+
+#Combine the two previous lines into one
+cat /home/john/coqui/rtwhisp/whisper_real_time/receivingtrans.txt /home/john/coqui/rtwhisp/whisper_real_time/receiving.txt > /home/john/coqui/rtwhisp/whisper_real_time/receivingfinal.txt
+
+#This cp may be unnecessary
+cp /home/john/coqui/rtwhisp/whisper_real_time/receivingfinal.txt /home/john/coqui/rtwhisp/whisper_real_time/receivingexec.txt
+
+#clear any weird stuff in these files
+paste -sd "" /home/john/coqui/rtwhisp/whisper_real_time/receivingexec.txt > /home/john/coqui/rtwhisp/whisper_real_time/receivingexec2.txt
+
+paste -sd "" /home/john/coqui/rtwhisp/whisper_real_time/receivingexec2.txt > /home/john/coqui/rtwhisp/whisper_real_time/receivingexec3.txt
+
+#Add a "
+echo '"' 1>| /home/john/coqui/rtwhisp/whisper_real_time/receivingexec1.txt
+
+> /home/john/coqui/rtwhisp/whisper_real_time/receivingexec4.txt
+
+#Combine the final cmd string
+cat /home/john/coqui/rtwhisp/whisper_real_time/receivingexec3.txt /home/john/coqui/rtwhisp/whisper_real_time/receivingexec1.txt > /home/john/coqui/rtwhisp/whisper_real_time/receivingexec4.txt
+
+#make the file executable and run
+var2=$(/home/john/coqui/rtwhisp/whisper_real_time/receivingexec4.txt)
+
+echo $var2
+
+#clean all the files except exec1, no need
+> /home/john/coqui/rtwhisp/whisper_real_time/receiving.txt
+> /home/john/coqui/rtwhisp/whisper_real_time/testing.txt
+> /home/john/coqui/rtwhisp/whisper_real_time/receivingtrans.txt
+> /home/john/coqui/rtwhisp/whisper_real_time/receivingfinal.txt
+> /home/john/coqui/rtwhisp/whisper_real_time/receivingexec.txt
+> /home/john/coqui/rtwhisp/whisper_real_time/receivingexec2.txt
+> /home/john/coqui/rtwhisp/whisper_real_time/receivingexec3.txt
+> /home/john/coqui/rtwhisp/whisper_real_time/receivingexec4.txt
+
+done
