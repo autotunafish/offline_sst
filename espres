@@ -38,13 +38,13 @@ var2=$(/home/john/coqui/rtwhisp/whisper_real_time/receivingexec4.txt)
 echo $var2
 
 #clean all the files except exec1, no need
-> /home/john/coqui/rtwhisp/whisper_real_time/receiving.txt
-> /home/john/coqui/rtwhisp/whisper_real_time/testing.txt
-> /home/john/coqui/rtwhisp/whisper_real_time/receivingtrans.txt
-> /home/john/coqui/rtwhisp/whisper_real_time/receivingfinal.txt
-> /home/john/coqui/rtwhisp/whisper_real_time/receivingexec.txt
-> /home/john/coqui/rtwhisp/whisper_real_time/receivingexec2.txt
-> /home/john/coqui/rtwhisp/whisper_real_time/receivingexec3.txt
-> /home/john/coqui/rtwhisp/whisper_real_time/receivingexec4.txt
+echo “” > /home/john/coqui/rtwhisp/whisper_real_time/receiving.txt
+echo “” > /home/john/coqui/rtwhisp/whisper_real_time/testing.txt
+echo “” > /home/john/coqui/rtwhisp/whisper_real_time/receivingtrans.txt
+echo “” > /home/john/coqui/rtwhisp/whisper_real_time/receivingfinal.txt
+echo “” > /home/john/coqui/rtwhisp/whisper_real_time/receivingexec.txt
+echo “” > /home/john/coqui/rtwhisp/whisper_real_time/receivingexec2.txt
+echo “” > /home/john/coqui/rtwhisp/whisper_real_time/receivingexec3.txt
+echo “” > /home/john/coqui/rtwhisp/whisper_real_time/receivingexec4.txt
 
 done
