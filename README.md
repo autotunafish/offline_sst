@@ -32,6 +32,8 @@ python transcribe_demo.py --model tiny
 
 -In a new terminal, Home, base env
 pip install argostranslate
+argospm update
+argospm install translate
 
 -Add executable permissions to the scripts
 -Adjust the filepaths
