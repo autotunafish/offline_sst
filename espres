@@ -33,18 +33,21 @@ echo '"' 1>| /home/john/coqui/rtwhisp/whisper_real_time/receivingexec1.txt
 cat /home/john/coqui/rtwhisp/whisper_real_time/receivingexec3.txt /home/john/coqui/rtwhisp/whisper_real_time/receivingexec1.txt > /home/john/coqui/rtwhisp/whisper_real_time/receivingexec4.txt
 
 #make the file executable and run
-var2=$(/home/john/coqui/rtwhisp/whisper_real_time/receivingexec4.txt)
+var2=$(/home/john/offline_sst/receivingexec4.txt)
 
-echo $var2
+echo $var2 >> /home/john/offline_sst/receivingdisplay.txt
+
+sed -e 's/\.  */.\n/g' -e 's/\.$/.\n/g' /home/john/offline_sst/receivingdisplay.txt
 
 #clean all the files except exec1, no need
-echo “” > /home/john/coqui/rtwhisp/whisper_real_time/receiving.txt
-echo “” > /home/john/coqui/rtwhisp/whisper_real_time/testing.txt
-echo “” > /home/john/coqui/rtwhisp/whisper_real_time/receivingtrans.txt
-echo “” > /home/john/coqui/rtwhisp/whisper_real_time/receivingfinal.txt
-echo “” > /home/john/coqui/rtwhisp/whisper_real_time/receivingexec.txt
-echo “” > /home/john/coqui/rtwhisp/whisper_real_time/receivingexec2.txt
-echo “” > /home/john/coqui/rtwhisp/whisper_real_time/receivingexec3.txt
-echo “” > /home/john/coqui/rtwhisp/whisper_real_time/receivingexec4.txt
+echo “” > /home/john/offline_sst/receiving.txt
+echo “” > /home/john/offline_sst/testing.txt
+echo “” > /home/john/offline_sst/receivingtrans.txt
+echo “” > /home/john/offline_sst/receivingfinal.txt
+echo “” > /home/john/offline_sst/receivingexec.txt
+echo “” > /home/john/offline_sst/receivingexec2.txt
+echo “” > /home/john/offline_sst/receivingexec3.txt
+echo “” > /home/john/offline_sst/receivingexec4.txt
+echo “” > /home/john/offline_sst/receivingdisplay.txt
 
 done
