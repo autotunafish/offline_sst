@@ -7,44 +7,44 @@ https://www.youtube.com/watch?v=gLVprfZREkI
 
 Whisper real-time and Argos translate also work on Win and Mac but the tool 'inotifywait' is used for communication from one program to the other and is Linux specific. There are equivalent tools in those other operating systems but are not covered here. This is a work in progress.
 
--Install dependencies
+# Install dependencies
 Anaconda3
 portaudio19-dev
 ffmpeg
 setuptools-rust
 inotify-tools
 
--clone
+# clone
 github.com/autotunafish/offline_sst
 
--conda env
+# conda env
 conda create -n name-me python=3.9
 conda activate name-me
 
--build
+# build
 cd offline_sst
 pip install -r requirements.txt
 
--check run
+# check run
 python transcribe_demo.py --model tiny 
 
--ctrl-C to stop
+- ctrl-C to stop
 
--In a new terminal, Home, base env
+# In a new terminal, Home, base env
 pip install argostranslate
 argospm update
 argospm install translate
 
--Add executable permissions to the scripts and receivingexec4.txt
--Adjust the filepaths (Sorry!)
+# Add executable permissions to the scripts and receivingexec4.txt
+# Adjust the filepaths (Sorry!)
 
--in Home, base, run the script
+# in Home, base, run the script
 ./espres_o
 
--in name-me, run
+# in name-me, run
 python transcribe_demo.py --model tiny 2>&1 | tee -a testing.txt
 
-
+# Check out
 https://github.com/davabase/whisper_real_time
 https://github.com/argosopentech/argos-translate
 
