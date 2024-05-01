@@ -35,8 +35,8 @@ pip install argostranslate
 argospm update
 argospm install translate
 
--Add executable permissions to the scripts
--Adjust the filepaths
+-Add executable permissions to the scripts and receivingexec4.txt
+-Adjust the filepaths (Sorry!)
 
 -in Home, base, run the script
 ./espres_o
@@ -47,3 +47,5 @@ python transcribe_demo.py --model tiny 2>&1 | tee -a testing.txt
 
 https://github.com/davabase/whisper_real_time
 https://github.com/argosopentech/argos-translate
+
+Update: added line to print the translation with line breaks, much nicer.
