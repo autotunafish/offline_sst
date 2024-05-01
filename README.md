@@ -38,7 +38,7 @@ argospm install translate
 # Add executable permissions to the scripts and receivingexec4.txt
 # Adjust the filepaths (Sorry!)
 
-# in Home, base, run the script
+# in Home, base env, run the script
 ./espres_o
 
 # in name-me, run
