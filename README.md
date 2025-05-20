@@ -13,6 +13,12 @@ portaudio19-dev
 ffmpeg
 setuptools-rust
 inotify-tools
+pulseaudio 
+libasound-dev 
+libportaudio2 
+libportaudiocpp0
+alsa-utils 
+libasound2-plugins
 
 # clone
 github.com/autotunafish/offline_sst
